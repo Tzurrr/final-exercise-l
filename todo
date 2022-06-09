@@ -1,4 +1,2 @@
 # add a config file that includes paths, etc.
 # switch the arrays in the client to dicts so the iteration will be cheaper
-# make all of the parts of the exercise to be services (inotify (watchdog (_) client), server (final_server), nifi and kibana) (redis and haproxy has alresy exist  done
-# look in the config file of the watchdog module and make it faster. now its doing its stuff fast, but if there will be 1000000000 files it will be slower
