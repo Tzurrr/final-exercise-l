@@ -17,7 +17,9 @@ async def upload(files: List[UploadFile] = File(...)):
         dot = find_dot.find(file.filename)
     with open (f"/home/tzur/all-the-photos/{file.filename[:dot-2]}.jpg", "wb") as file:
         file.writelines(contents)
+        filename = file.name
     elogger.write("wrote")
+    encryptor.encrypt(filename)
     return {"message": f"Successfuly uploaded {[file.filename for file in files]}"}
 
 if __name__ == '__main__':
