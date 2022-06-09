@@ -15,7 +15,7 @@ async def upload(files: List[UploadFile] = File(...)):
         contents.append(await file.read())
         await file.close()
         dot = find_dot.find(file.filename)
-    with open (f"/home/tzur/server-tools/a/{file.filename[:dot-2]}.jpg", "wb") as file:
+    with open (f"/home/tzur/all-the-photos/{file.filename[:dot-2]}.jpg", "wb") as file:
         file.writelines(contents)
     elogger.write("wrote")
     return {"message": f"Successfuly uploaded {[file.filename for file in files]}"}
