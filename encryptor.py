@@ -8,9 +8,9 @@ def encrypt(filename):
     # hash
     print(filename)
     with open(filename, "rb") as file:
-        internals = file.read()
+        content = file.read()
 
-    a = hashlib.sha512(str(internals).encode())
+    a = hashlib.sha512(str(content).encode())
     a = a.hexdigest()
     print(a)
 
