@@ -6,20 +6,21 @@ from Crypto.Cipher import AES
 
 def encrypt(filename):
     # hash
-    print(filename)
+ #   print(filename)
     with open(filename, "rb") as file:
+        file.seek(0)
         content = file.read()
 
     a = hashlib.sha512(str(content).encode())
     a = a.hexdigest()
-    print(a)
+ #   print(a)
 
     # iv for obj props
     iv = Random.new().read(AES.block_size)
-    print(iv)
+#    print(iv)
 
     # getting the key which is also for generating the obj props
-    with open("/home/tzur/server-tools/keys/tornado.key", "rb") as file:#"/home/tzur/keys/tornado.key", "rb") as file:
+    with open("/home/tzur/server-tools1/keys/tornado.key", "rb") as file:#"/home/tzur/keys/tornado.key", "rb") as file:
         key = file.read() + b"    "  # [:24]
 
     # creating the obj
